@@ -32,10 +32,14 @@ function paintGreeting(text){
     
     const date = new Date();
     const hours = date.getHours();
-    if (hours > 12) {
-      greeting.innerText = `Good afternoon, ${text}`;
-    } else {
+    if (hours > 6 && hours <= 12) {
       greeting.innerText = `Good morning, ${text}`;
+    } else if (hours > 12 && hours <= 17){
+      greeting.innerText = `Good afternoon, ${text}`;
+    } else if (hours > 17 && hours <= 22) {
+      greeting.innerText = `Good evening, ${text}`;
+    } else {
+      greeting.innerText = `Good night, ${text}`;
     }
 }
 
